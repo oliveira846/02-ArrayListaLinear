@@ -111,13 +111,17 @@ void buscarElemento()
 	cin >> buscaNumero;
 	for (int i = 0; i < nElementos; i++) {
 		if (buscaNumero == lista[i]) {
-			cout << "Numero encontrado na posicao " << i + 1 << endl;
-			verificar = true;
-			break;
+			if (verificar == false) {
+				cout << buscaNumero << " encontrado nas posicoes: " << i + 1;
+				verificar = true;
+			}
+			else {
+				cout << ", " << i + 1;
+			}
 		}
 	}
-	cout << verificar;
 	if (verificar == false) {
 		cout << "Numero nao encontrado " << endl;
 	}
+	cout << endl;
 }
